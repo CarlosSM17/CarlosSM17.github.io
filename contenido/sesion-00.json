@@ -1,0 +1,135 @@
+{
+  "numero": 0,
+  "unidad": 0,
+  "titulo": "De Scratch a Blockly",
+  "subtitulo": "Conoce la plataforma y juega el proyecto final",
+  "python": [],
+  "modo": 1,
+  "historiaIcono": "👋",
+  "historia": "¡Bienvenida, bienvenido! En Scratch aprendiste a pensar como programador: eventos, repeticiones, decisiones y variables. Ahora darás el siguiente paso: escribir programas en <b>Python</b>, el lenguaje que usan científicos, creadores de videojuegos y hasta la NASA. Lo harás poco a poco, con bloques que se parecen a los de Scratch.",
+  "objetivos": [
+    "Conocer la plataforma: bloques, panel de Python, consola y botones.",
+    "Descubrir que cada bloque es una línea de Python.",
+    "Jugar el proyecto que podrás programar al final del curso.",
+    "Responder la prueba diagnóstica (es tu punto de partida, no tiene calificación)."
+  ],
+  "teoria": [
+    { "tipo": "texto", "html": "Python es un lenguaje de programación de <b>texto</b>: en lugar de encajar bloques, se escriben instrucciones. Al principio usaremos bloques parecidos a los de Scratch, pero con las palabras reales de Python. Mientras armas, verás aparecer el código Python a un lado." },
+    { "tipo": "analogia", "icono": "🎬", "titulo": "Como los subtítulos de una película", "html": "Los bloques son la película y el panel de Python son los subtítulos: dicen exactamente lo mismo, pero escrito. Al principio ves la película; poco a poco leerás solo los subtítulos… ¡y al final los escribirás tú!" },
+    { "tipo": "comparacion", "titulo": "Scratch, bloques de Python y Python", "col1": "En Scratch", "col2": "En Python", "filas": [
+      { "scratch": "decir <i>Hola</i>", "python": "print(\"Hola\")" },
+      { "scratch": "dar a <i>puntos</i> el valor 0", "python": "puntos = 0" },
+      { "scratch": "repetir 10", "python": "for i in range(10):" },
+      { "scratch": "si ‹edad > 12› entonces", "python": "if edad > 12:" },
+      { "scratch": "preguntar <i>¿Cómo te llamas?</i> y esperar", "python": "nombre = input(\"¿Cómo te llamas? \")" }
+    ] },
+    { "tipo": "titulo", "texto": "Cómo funciona la plataforma" },
+    { "tipo": "texto", "html": "<ul><li><b>Caja de herramientas</b> (izquierda): categorías de bloques con los colores de Scratch. Toca una categoría y arrastra el bloque al área de trabajo.</li><li><b>Panel de Python</b>: muestra el código de tus bloques. Toca una línea y se resalta su bloque.</li><li><b>▶ Ejecutar</b>: corre tu programa; lo que muestra aparece en la <b>consola</b> (zona oscura).</li><li><b>👣 Paso a paso</b>: ejecuta línea por línea y te enseña cómo cambian las variables.</li><li><b>✔ Comprobar</b>: revisa tu programa con casos de prueba y te dice qué falló.</li><li>Para borrar un bloque, arrástralo al <b>bote de basura</b>. Con <b>+</b> y <b>−</b> acercas o alejas.</li></ul>" },
+    { "tipo": "titulo", "texto": "Cuatro modos de trabajo" },
+    { "tipo": "texto", "html": "Los bloques te ayudarán mucho al principio y luego cada vez menos:<ol><li><b>Bloques</b>: armas con bloques y lees el Python.</li><li><b>Completar</b>: armas con bloques y escribes en Python algunas partes.</li><li><b>Con apoyo</b>: escribes Python y puedes ver bloques como pista.</li><li><b>Libre</b>: escribes Python de principio a fin.</li></ol>Si ya dominas un tema, puedes adelantarte al siguiente modo." },
+    { "tipo": "texto", "html": "Cada reto principal tiene tres niveles: <b>Explorador</b> ★ (ya trae parte del programa), <b>Programador</b> ★★ (lo armas completo) y <b>Maestro</b> ★★★ (con un requisito extra). Al superar todos los retos de una unidad ganas una <b>insignia</b>." }
+  ],
+  "glosario": [
+    { "en": "Python", "es": "Python (nombre del lenguaje)", "def": "Lenguaje de programación de texto, muy usado en el mundo. Su nombre viene de un grupo de comedia, no de la serpiente." },
+    { "en": "code", "es": "código", "def": "Las instrucciones escritas de un programa." },
+    { "en": "run", "es": "ejecutar", "def": "Hacer que la computadora siga las instrucciones del programa." },
+    { "en": "block", "es": "bloque", "def": "Pieza que se arrastra y encaja; aquí, cada bloque es una línea de Python." }
+  ],
+  "ejemplo": {
+    "nombrePaso": "Juega el proyecto final",
+    "titulo": "Piedra, papel o tijera",
+    "descripcion": "Este es un proyecto como el que podrás programar tú al final del curso. Presiona <b>▶ Ejecutar</b> y juega contra la computadora escribiendo tus jugadas en la consola. No te preocupes por entender todo el código todavía.",
+    "entradasSugeridas": "piedra, papel o tijera",
+    "codigo": "import random\nopciones = [\"piedra\", \"papel\", \"tijera\"]\npuntos_tu = 0\npuntos_compu = 0\ndef quien_gana(tu, compu):\n    if tu == compu:\n        return \"empate\"\n    if tu == \"piedra\" and compu == \"tijera\":\n        return \"tu\"\n    if tu == \"papel\" and compu == \"piedra\":\n        return \"tu\"\n    if tu == \"tijera\" and compu == \"papel\":\n        return \"tu\"\n    return \"compu\"\nprint(\"¡Piedra, papel o tijera! Jugamos 3 rondas.\")\nfor ronda in range(1, 4):\n    print(\"Ronda\", ronda)\n    tu = input(\"Elige piedra, papel o tijera: \").lower()\n    while tu not in opciones:\n        tu = input(\"No entendí. Escribe piedra, papel o tijera: \").lower()\n    compu = random.choice(opciones)\n    print(\"La computadora eligió\", compu)\n    resultado = quien_gana(tu, compu)\n    if resultado == \"tu\":\n        puntos_tu = puntos_tu + 1\n        print(\"¡Ganaste la ronda!\")\n    elif resultado == \"compu\":\n        puntos_compu = puntos_compu + 1\n        print(\"La computadora gana la ronda.\")\n    else:\n        print(\"Empate.\")\nprint(\"Marcador final:\", puntos_tu, \"a\", puntos_compu)\nif puntos_tu > puntos_compu:\n    print(\"¡Ganaste el juego!\")\nelif puntos_compu > puntos_tu:\n    print(\"Ganó la computadora. ¡Revancha!\")\nelse:\n    print(\"¡Empate!\")",
+    "entradasPrueba": ["piedra", "papel", "tijera"],
+    "azarPrueba": ["tijera", "tijera", "papel"],
+    "prediccion": {
+      "pregunta": "Mira el código (aunque todavía no lo entiendas todo). ¿Qué crees que hace este programa?",
+      "opciones": ["Un juego de piedra, papel o tijera contra la computadora", "Una calculadora", "Un dibujo de una tijera", "Un chat con un amigo"],
+      "correcta": 0,
+      "explicacion": "¡Exacto! Aunque es la primera vez que ves Python, muchas palabras se entienden: input (pedir), random (azar), print (mostrar)."
+    },
+    "investigar": [
+      "Busca en el código la palabra <code>random</code>: ¿para qué crees que sirve?",
+      "¿Qué pasa si escribes una jugada que no existe, como «lagarto»?",
+      "¿Cuántas rondas se juegan? ¿En qué línea se decide?"
+    ],
+    "modificar": "Cambia el número de rondas a 5. Pista: busca el bloque <code>range(1, 4)</code>."
+  },
+  "microretos": [
+    {
+      "id": "s00-m1",
+      "titulo": "Arrastra y suelta",
+      "resumen": "Tu primer bloque.",
+      "enunciado": "Abre la categoría <b>Entrada y salida</b>, arrastra el bloque <code>print(\"¡Hola!\")</code> al área de trabajo y presiona <b>▶ Ejecutar</b>. Después presiona <b>✔ Comprobar</b>.",
+      "inicio": "",
+      "bloques": ["py_print", "py_string"],
+      "pruebas": [{ "contiene": ["Hola"] }],
+      "solucion": "print(\"¡Hola!\")",
+      "pistas": [
+        "La caja de herramientas está a la izquierda. «Entrada y salida» es la morada.",
+        "Arrastra el bloque con el dedo (o el ratón) y suéltalo en la zona punteada.",
+        "Cuando aparezca <code>print(\"¡Hola!\")</code> en el panel de Python, presiona Ejecutar."
+      ]
+    },
+    {
+      "id": "s00-m2",
+      "titulo": "Cambia el mensaje",
+      "resumen": "Edita el texto de un bloque.",
+      "enunciado": "Toca el texto del bloque y cámbialo para que el programa diga <b>Hola, soy</b> y tu nombre. Fíjate cómo cambia también la línea de Python.",
+      "inicio": "print(\"Hola, mundo\")",
+      "bloques": ["py_print", "py_string"],
+      "pruebas": [{ "contiene": ["Hola, soy"] }],
+      "solucion": "print(\"Hola, soy Robi\")",
+      "pistas": [
+        "Toca dentro del rectángulo blanco del bloque de texto para escribir.",
+        "Borra «mundo» y escribe «soy» seguido de tu nombre.",
+        "Debe quedar algo como <code>print(\"Hola, soy Ana\")</code>."
+      ]
+    },
+    {
+      "id": "s00-m3",
+      "titulo": "Del bloque a Python",
+      "resumen": "Agrega un segundo bloque.",
+      "enunciado": "Agrega un segundo <code>print</code> debajo del primero, con el mensaje que quieras. Observa cómo aparece una segunda línea en el panel de Python.",
+      "inicio": "print(\"Este es mi primer programa\")",
+      "bloques": ["py_print", "py_string"],
+      "requiere": ["print*2"],
+      "pruebas": [{ "contiene": ["Este es mi primer programa"], "lineasMin": 2 }],
+      "solucion": "print(\"Este es mi primer programa\")\nprint(\"¡Y ya tiene dos líneas!\")",
+      "pistas": [
+        "Necesitas otro bloque <code>print</code>.",
+        "Encájalo justo debajo del primero: verás que se «pega».",
+        "Cambia el texto del nuevo bloque y ejecuta."
+      ]
+    }
+  ],
+  "prueba": "diagnostica",
+  "puente": [
+    {
+      "pregunta": "¿Dónde ves el Python de tus bloques?",
+      "opciones": ["En el panel de Python, junto a los bloques", "Solo cuando termino el curso", "En la caja de herramientas", "No se puede ver"],
+      "correcta": 0,
+      "explicacion": "Cada vez que agregas o cambias un bloque, el panel de Python se actualiza."
+    }
+  ],
+  "autoevaluacion": [
+    { "pregunta": "¿Qué hace el botón 👣 Paso a paso?", "respuesta": "Ejecuta el programa línea por línea, resaltando cada bloque y su línea de Python, y muestra cómo cambian las variables." },
+    { "pregunta": "¿Qué diferencia hay entre Ejecutar y Comprobar?", "respuesta": "Ejecutar corre tu programa para que lo pruebes. Comprobar lo revisa con casos de prueba y te dice si cumple el reto y qué falló." }
+  ],
+  "ticket": {
+    "pregunta": "En esta plataforma, cada bloque que armas…",
+    "opciones": ["se convierte en una línea de Python", "se borra al ejecutar", "solo funciona en Scratch", "no hace nada"],
+    "correcta": 0,
+    "explicacion": "Los bloques y el Python dicen lo mismo: por eso podrás pasar de unos al otro."
+  },
+  "plan": {
+    "activacion": "Pregunta al grupo qué hicieron en Scratch. Muestra un proyecto de Scratch y el mismo en Python: ¿qué palabras reconocen?",
+    "ejemplo": "Proyecta «Piedra, papel o tijera» y juega frente al grupo. Señala palabras que se entienden aunque no sepan Python (input, print, random).",
+    "practica": "Micro-retos 1 a 3 en parejas para conocer la plataforma: arrastrar, editar texto, agregar bloques, ejecutar y comprobar.",
+    "reto": "Prueba diagnóstica individual (10 preguntas de leer código). Aclara que no tiene calificación: es el punto de partida y se repetirá en la Sesión 16.",
+    "cierre": "Ticket de salida. Explica cómo se guarda el progreso en el iPad y cómo exportarlo desde «Mi progreso».",
+    "minutos": { "reto": 20, "practica": 15 },
+    "notas": "Antes de la clase prueba la plataforma en un iPad del grupo (arrastre táctil, teclado e input en la consola). Si el navegador bloquea el almacenamiento, pide a los alumnos que exporten su progreso al final de cada sesión."
+  }
+}

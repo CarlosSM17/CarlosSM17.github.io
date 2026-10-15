@@ -1,0 +1,207 @@
+{
+  "numero": 4,
+  "unidad": 2,
+  "titulo": "Trabajar con texto",
+  "python": ["concatenación +", "len()", ".upper()", "f-strings"],
+  "modo": 1,
+  "historiaIcono": "🏷️",
+  "historia": "En tu grupo casi todos tienen apodo. ¿Y si un programa inventara apodos geniales a partir de tu nombre y tu animal favorito? Para eso necesitas aprender a trabajar con <b>texto</b>.",
+  "objetivos": [
+    "Unir textos con <code>+</code> (concatenación).",
+    "Contar caracteres con <code>len()</code>.",
+    "Transformar texto con <code>.upper()</code>, <code>.lower()</code> y <code>.title()</code>.",
+    "Armar mensajes con <b>f-strings</b>: <code>f\"Hola {nombre}\"</code>."
+  ],
+  "teoria": [
+    { "tipo": "texto", "html": "Un texto en Python se llama <b>cadena</b> (<code>str</code>). Ya sabes mostrarlo con <code>print</code>; hoy aprenderás a unirlo, medirlo y transformarlo." },
+    { "tipo": "comparacion", "titulo": "De Scratch a Python", "filas": [
+      { "scratch": "unir <i>Hola</i> <i>Ana</i>", "python": "\"Hola \" + \"Ana\"", "nota": "Ojo con el espacio: Python no lo agrega solo." },
+      { "scratch": "longitud de <i>manzana</i>", "python": "len(\"manzana\")", "nota": "Da 7." },
+      { "scratch": "(no existe)", "python": "\"hola\".upper()", "nota": "Da \"HOLA\"." }
+    ] },
+    { "tipo": "titulo", "texto": "Métodos de texto" },
+    { "tipo": "texto", "html": "Un <b>método</b> es una acción que tiene un tipo de dato. Se escribe con un punto después del valor: <code>nombre.upper()</code>.<ul><li><code>.upper()</code> → MAYÚSCULAS</li><li><code>.lower()</code> → minúsculas</li><li><code>.title()</code> → Cada Palabra Con Mayúscula</li><li><code>.strip()</code> → quita espacios de las orillas</li></ul>" },
+    { "tipo": "codigo", "codigo": "animal = \"jaguar\"\nprint(animal.upper())\nprint(animal.title())\nprint(len(animal))" },
+    { "tipo": "titulo", "texto": "f-strings: plantillas de texto" },
+    { "tipo": "analogia", "icono": "📝", "titulo": "Una hoja para rellenar", "html": "Una f-string es como un formato con espacios en blanco: «Hola, ____, tienes ____ años». Pones una <code>f</code> antes de las comillas y escribes el nombre de las variables entre llaves <code>{ }</code>; Python rellena los espacios." },
+    { "tipo": "bloques", "codigo": "nombre = \"Ana\"\nedad = 12\nprint(f\"Hola, {nombre}, tienes {edad} años\")", "alto": 150, "nota": "Dentro de las llaves también puedes poner cuentas o métodos: <code>{edad + 1}</code>, <code>{nombre.upper()}</code>." },
+    { "tipo": "texto", "html": "Tres formas de mostrar lo mismo:<br><code>print(\"Hola,\", nombre)</code> → con comas (pone espacios)<br><code>print(\"Hola, \" + nombre)</code> → con + (tú pones los espacios; solo une textos)<br><code>print(f\"Hola, {nombre}\")</code> → con f-string" }
+  ],
+  "fichas": [
+    { "titulo": "Unir textos", "codigo": "saludo = \"Hola, \" + nombre" },
+    { "titulo": "Largo de un texto", "codigo": "n = len(nombre)" },
+    { "titulo": "Mayúsculas y minúsculas", "codigo": "grito = nombre.upper()\nsuave = nombre.lower()\nbonito = nombre.title()" },
+    { "titulo": "f-string", "codigo": "print(f\"{nombre} tiene {edad} años\")", "nota": "La <code>f</code> va antes de las comillas." }
+  ],
+  "glosario": [
+    { "en": "string", "es": "cadena de texto", "def": "Un texto entre comillas." },
+    { "en": "concatenation", "es": "concatenación", "def": "Unir textos con <code>+</code>." },
+    { "en": "len (length)", "es": "largo, longitud", "def": "Cuántos caracteres tiene un texto." },
+    { "en": "upper / lower", "es": "mayúsculas / minúsculas", "def": "Métodos que cambian las letras." },
+    { "en": "method", "es": "método", "def": "Acción de un valor que se escribe con punto: <code>texto.upper()</code>." },
+    { "en": "f-string", "es": "cadena con formato", "def": "Texto que empieza con <code>f</code> y reemplaza lo que va entre <code>{ }</code>." }
+  ],
+  "ejemplo": {
+    "titulo": "El nombre de Valentina",
+    "descripcion": "¿Cuántas formas hay de mostrar un mismo nombre?",
+    "codigo": "nombre = \"valentina\"\nprint(nombre.title())\nprint(nombre.upper())\nprint(\"Tu nombre tiene\", len(nombre), \"letras\")\nprint(f\"¡Hola, {nombre.title()}!\")",
+    "prediccion": {
+      "pregunta": "¿Qué número aparece en la tercera línea de la salida?",
+      "opciones": ["9", "10", "8", "valentina"],
+      "correcta": 0,
+      "explicacion": "«valentina» tiene 9 letras: v-a-l-e-n-t-i-n-a."
+    },
+    "investigar": [
+      "¿Qué pasa si el nombre tiene un espacio, como «ana sofía»? ¿El espacio cuenta en len()?",
+      "¿Qué diferencia hay entre <code>.title()</code> y <code>.upper()</code>?",
+      "Quita la <code>f</code> de la última línea: ¿qué se muestra?"
+    ],
+    "modificar": "Cambia el nombre por el tuyo y agrega una línea que lo muestre en minúsculas."
+  },
+  "microretos": [
+    {
+      "id": "s04-m1",
+      "titulo": "¡A gritar!",
+      "resumen": "Convierte a mayúsculas.",
+      "enunciado": "Pide una palabra y muéstrala en MAYÚSCULAS: si escribes «hola», muestra <code>HOLA</code>.",
+      "inicio": "palabra = input(\"Escribe una palabra: \")\nprint(___)",
+      "bloques": ["py_assign", "py_var", "py_input", "py_print", "py_string", "py_str_method"],
+      "requiere": ["upper"],
+      "pruebas": [
+        { "nombre": "hola", "entradas": ["hola"], "contiene": ["HOLA"] },
+        { "nombre": "vamos", "entradas": ["vamos"], "contiene": ["VAMOS"] }
+      ],
+      "solucion": "palabra = input(\"Escribe una palabra: \")\nprint(palabra.upper())",
+      "pistas": [
+        "El método que convierte a mayúsculas es <code>.upper()</code>.",
+        "En la categoría Texto está el bloque <code>( ).upper()</code>: mete la variable en su hueco.",
+        "Debe quedar <code>print(palabra.upper())</code>."
+      ]
+    },
+    {
+      "id": "s04-m2",
+      "titulo": "Cuenta letras",
+      "resumen": "Usa len().",
+      "enunciado": "Pide una palabra y di cuántas letras tiene: <code>Tiene 6 letras</code>.",
+      "inicio": "palabra = input(\"Escribe una palabra: \")\nprint(\"Tiene\", ___, \"letras\")",
+      "bloques": ["py_assign", "py_var", "py_input", "py_print", "py_string", "py_len"],
+      "requiere": ["len"],
+      "pruebas": [
+        { "nombre": "python", "entradas": ["python"], "contiene": ["Tiene 6 letras"] },
+        { "nombre": "mariposa", "entradas": ["mariposa"], "contiene": ["Tiene 8 letras"] }
+      ],
+      "solucion": "palabra = input(\"Escribe una palabra: \")\nprint(\"Tiene\", len(palabra), \"letras\")",
+      "pistas": [
+        "<code>len()</code> cuenta los caracteres.",
+        "Pon el bloque <code>len( )</code> en el hueco y la variable dentro.",
+        "El hueco es <code>len(palabra)</code>."
+      ]
+    },
+    {
+      "id": "s04-m3",
+      "titulo": "Presentación con f-string",
+      "resumen": "Rellena una plantilla.",
+      "enunciado": "Pide un nombre y una edad y muestra: <code>Luis tiene 13 años</code> usando una <b>f-string</b>.",
+      "inicio": "nombre = input(\"Nombre: \")\nedad = input(\"Edad: \")\nprint(___)",
+      "bloques": ["py_assign", "py_var", "py_input", "py_print", "py_fstring", "py_string"],
+      "requiere": ["fstring"],
+      "pruebas": [
+        { "nombre": "Luis, 13", "entradas": ["Luis", "13"], "contiene": ["Luis tiene 13 años"] },
+        { "nombre": "Mía, 12", "entradas": ["Mía", "12"], "contiene": ["Mía tiene 12 años"] }
+      ],
+      "solucion": "nombre = input(\"Nombre: \")\nedad = input(\"Edad: \")\nprint(f\"{nombre} tiene {edad} años\")",
+      "pistas": [
+        "El bloque <code>f\" \"</code> está en la categoría Texto.",
+        "Dentro escribe el texto y pon los nombres de las variables entre llaves.",
+        "El texto de la f-string es <code>{nombre} tiene {edad} años</code>."
+      ]
+    }
+  ],
+  "reto": {
+    "id": "s04-reto",
+    "titulo": "Generador de apodos",
+    "historia": "Todo el grupo quiere un apodo de agente secreto.",
+    "enunciado": "Pide tu <b>nombre</b> y tu <b>animal favorito</b>. Arma un apodo así: el animal en MAYÚSCULAS, un guion bajo, el nombre con la primera letra en mayúscula (<code>.title()</code>), otro guion bajo y cuántas letras tiene el nombre. Muestra:<br><code>Tu apodo es GATO_Ana_3</code>",
+    "requiere": ["input*2", "upper", "title", "len"],
+    "pruebas": [
+      { "nombre": "ana y gato", "entradas": ["ana", "gato"], "contiene": ["Tu apodo es GATO_Ana_3"] },
+      { "nombre": "leonardo y tigre", "entradas": ["leonardo", "tigre"], "contiene": ["Tu apodo es TIGRE_Leonardo_8"] },
+      { "nombre": "sofía y búho", "entradas": ["sofía", "búho"], "contiene": ["Tu apodo es BÚHO_Sofía_5"] }
+    ],
+    "pistas": [
+      "Necesitas <code>.upper()</code>, <code>.title()</code> y <code>len()</code>. Una f-string facilita unir todo.",
+      "Pide los dos datos, guarda el apodo en una variable y muéstralo.",
+      "Con f-string: <code>apodo = f\"{animal.upper()}_{nombre.title()}_{len(nombre)}\"</code>."
+    ],
+    "niveles": {
+      "explorador": {
+        "descripcion": "El apodo se arma con + . Completa la pieza que falta (el nombre con .title()).",
+        "inicio": "nombre = input(\"¿Cómo te llamas? \")\nanimal = input(\"¿Tu animal favorito? \")\napodo = animal.upper() + \"_\" + ___ + \"_\" + str(len(nombre))\nprint(\"Tu apodo es\", apodo)",
+        "solucion": "nombre = input(\"¿Cómo te llamas? \")\nanimal = input(\"¿Tu animal favorito? \")\napodo = animal.upper() + \"_\" + nombre.title() + \"_\" + str(len(nombre))\nprint(\"Tu apodo es\", apodo)"
+      },
+      "programador": {
+        "inicio": "",
+        "solucion": "nombre = input(\"¿Cómo te llamas? \")\nanimal = input(\"¿Tu animal favorito? \")\napodo = f\"{animal.upper()}_{nombre.title()}_{len(nombre)}\"\nprint(\"Tu apodo es\", apodo)"
+      },
+      "maestro": {
+        "enunciado": "además, muestra cuántos caracteres tiene el apodo completo: <code>Tu apodo tiene 10 caracteres</code>.",
+        "inicio": "",
+        "pruebas": [
+          { "nombre": "ana y gato", "entradas": ["ana", "gato"], "contiene": ["Tu apodo es GATO_Ana_3", "10 caracteres"] },
+          { "nombre": "leonardo y tigre", "entradas": ["leonardo", "tigre"], "contiene": ["Tu apodo es TIGRE_Leonardo_8", "16 caracteres"] }
+        ],
+        "solucion": "nombre = input(\"¿Cómo te llamas? \")\nanimal = input(\"¿Tu animal favorito? \")\napodo = f\"{animal.upper()}_{nombre.title()}_{len(nombre)}\"\nprint(\"Tu apodo es\", apodo)\nprint(\"Tu apodo tiene\", len(apodo), \"caracteres\")"
+      }
+    }
+  },
+  "extra": {
+    "id": "s04-extra",
+    "titulo": "Letrero luminoso",
+    "historia": "La feria de ciencias necesita letreros.",
+    "enunciado": "Pide una palabra y muéstrala dentro de un marco de asteriscos del tamaño exacto. Para «hola»:<br><code>********</code><br><code>* hola *</code><br><code>********</code><br>Pista: <code>\"*\" * 8</code> repite el asterisco 8 veces; el marco mide <code>len(palabra) + 4</code>.",
+    "inicio": "",
+    "requiere": ["len"],
+    "pruebas": [
+      { "nombre": "hola", "entradas": ["hola"], "exacto": "********\n* hola *\n********" },
+      { "nombre": "python", "entradas": ["python"], "exacto": "**********\n* python *\n**********" }
+    ],
+    "solucion": "palabra = input(\"Palabra: \")\nborde = \"*\" * (len(palabra) + 4)\nprint(borde)\nprint(\"* \" + palabra + \" *\")\nprint(borde)"
+  },
+  "puente": [
+    {
+      "pregunta": "¿Qué línea de Python corresponde a este bloque?",
+      "bloques": "print(nombre.upper())",
+      "altoBloques": 110,
+      "codigoOpciones": true,
+      "opciones": ["print(nombre.upper())", "print(upper(nombre))", "print(nombre.upper)", "print(\"nombre\".upper())"],
+      "correcta": 0,
+      "explicacion": "El método va después de un punto y lleva paréntesis."
+    },
+    {
+      "pregunta": "En Scratch usabas <b>unir</b>. ¿Qué operador hace lo mismo en Python?",
+      "codigoOpciones": true,
+      "opciones": ["+", "&", ",", "join"],
+      "correcta": 0,
+      "explicacion": "<code>\"Hola \" + \"Ana\"</code> une los dos textos."
+    }
+  ],
+  "autoevaluacion": [
+    { "pregunta": "¿Qué da <code>\"Hola\" + \"Ana\"</code>?", "respuesta": "<code>\"HolaAna\"</code>, sin espacio. El espacio hay que ponerlo tú: <code>\"Hola \" + \"Ana\"</code>." },
+    { "pregunta": "¿Por qué <code>\"Edad: \" + 12</code> da TypeError?", "respuesta": "Porque + no puede unir un texto con un número. Usa <code>str(12)</code>, una coma en print o una f-string." },
+    { "pregunta": "¿Cuánto da <code>len(\"Hola mundo\")</code>?", "respuesta": "10: el espacio también cuenta como carácter." }
+  ],
+  "ticket": {
+    "pregunta": "¿Qué número se muestra?",
+    "codigo": "s = \"Hola\"\nprint(len(s + \"!\"))",
+    "opciones": ["5", "4", "6", "Hola!"],
+    "correcta": 0,
+    "explicacion": "s + \"!\" es \"Hola!\", que tiene 5 caracteres."
+  },
+  "plan": {
+    "activacion": "«¿Qué imprime?»: <code>print(\"ja\" * 3)</code> y <code>print(len(\"ja ja\"))</code>.",
+    "ejemplo": "Arma el ejemplo de Valentina. Pregunta qué hace cada método antes de ejecutar. Compara las tres formas de mostrar texto (comas, + y f-string).",
+    "practica": "Micro-retos (gritar, contar letras, f-string) en parejas.",
+    "reto": "Generador de apodos. Al terminar, cada quien comparte su apodo en voz alta.",
+    "cierre": "Explica en el pizarrón cómo se armó el apodo: bloque por bloque y línea por línea. Ticket de salida. Insignia «Domador de datos» para quien superó los retos de las sesiones 3 y 4."
+  }
+}

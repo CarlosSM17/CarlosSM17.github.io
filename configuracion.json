@@ -1,0 +1,15 @@
+{
+  "idCurso": "python-blockly-1sec",
+  "nombreCurso": "De Bloques a Python",
+  "nombreCorto": "Bloques → Python",
+  "lema": "Del bloque al código, paso a paso: de Scratch a tus propios programas en Python.",
+  "pinDocente": "2468",
+  "enlaceTicket": "",
+  "urlPublica": "",
+  "evaluacion": {
+    "pesos": { "retos": 40, "miniProyecto": 20, "proyectoFinal": 30, "tickets": 10 },
+    "creditoExplorador": 0.5,
+    "sesionMiniProyecto": 7,
+    "sesionProyectoFinal": 15
+  }
+}

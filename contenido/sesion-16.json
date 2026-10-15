@@ -1,0 +1,42 @@
+{
+  "numero": 16,
+  "unidad": 7,
+  "titulo": "Presentación de proyectos",
+  "subtitulo": "Demostración, coevaluación y prueba final",
+  "python": [],
+  "modo": 4,
+  "historiaIcono": "🎉",
+  "historia": "¡Es día de presentaciones! Cada quien mostrará su proyecto al grupo, evaluará el de alguien más y hará la prueba final para ver cuánto avanzó desde la Sesión 0.",
+  "objetivos": [
+    "Presentar tu proyecto y explicar cómo funciona tu código.",
+    "Evaluar con la rúbrica el proyecto de un compañero o compañera, con respeto y con sugerencias útiles.",
+    "Responder la prueba final y comparar con tu prueba diagnóstica."
+  ],
+  "teoria": [
+    { "tipo": "titulo", "texto": "Cómo presentar tu proyecto (3 minutos)" },
+    { "tipo": "texto", "html": "<ol><li><b>¿Qué hace?</b> Explica en una frase la idea de tu programa.</li><li><b>Demostración</b>: ejecútalo y juega una partida frente al grupo.</li><li><b>Una parte del código</b>: elige una función y explica qué hace, línea por línea. Puedes abrir el panel 🧩 Bloques para mostrar cómo se ve en bloques.</li><li><b>¿Qué aprendiste y qué mejorarías?</b> Menciona algo que te costó trabajo y una idea para la siguiente versión.</li></ol>" },
+    { "tipo": "analogia", "icono": "🎤", "titulo": "Como una feria de ciencias", "html": "En una feria no basta con traer el experimento: hay que explicar qué hiciste y por qué. Tu código es tu experimento." },
+    { "tipo": "titulo", "texto": "Cómo coevaluar" },
+    { "tipo": "texto", "html": "Usa la rúbrica para evaluar con justicia: elige el nivel que mejor describe lo que viste, no el que te cae mejor. Escribe algo que te haya gustado y una sugerencia concreta (por ejemplo: «agregar un mensaje cuando la respuesta no es válida»)." },
+    { "tipo": "titulo", "texto": "Del bloque al código: lo que lograste" },
+    { "tipo": "texto", "html": "Empezaste armando bloques y leyendo Python. Ahora escribes programas con variables, decisiones, bucles, listas y funciones. ¡Estás listo para cursos de Python en texto, como los basados en proyectos (Puzzle de 15, Torre de Hanói)!" }
+  ],
+  "coevaluacion": {
+    "titulo": "Coevaluación del proyecto de un compañero",
+    "instrucciones": "Después de ver la presentación, evalúa el proyecto con la rúbrica. Puedes hacer más de una coevaluación."
+  },
+  "prueba": "final",
+  "autoevaluacion": [
+    { "pregunta": "¿Qué concepto del curso te costó más trabajo y cómo lo superaste?", "respuesta": "Respuesta personal. Comparte tu reflexión con tu docente o escríbela en el comentario del resumen." },
+    { "pregunta": "¿Qué te gustaría programar después de este curso?", "respuesta": "Respuesta personal. Algunas ideas: juegos con gráficos (Pygame), proyectos de ciencia con datos, el Puzzle de 15 o la Torre de Hanói." }
+  ],
+  "plan": {
+    "activacion": "Organiza el orden de presentaciones y explica los 4 pasos para presentar.",
+    "ejemplo": "Presenta tú primero un proyecto de ejemplo en 3 minutos, siguiendo los 4 pasos, para modelar.",
+    "practica": "Presentaciones (3 minutos cada una). El grupo coevalúa en la plataforma con la rúbrica.",
+    "reto": "Prueba final individual (las mismas 10 preguntas de la Sesión 0). Al terminar, cada quien ve su comparación.",
+    "cierre": "Cada alumno descarga su archivo de progreso y lo entrega. Desde el Panel docente consolidas los archivos para el reporte del grupo (avance diagnóstica → final).",
+    "minutos": { "activacion": 5, "ejemplo": 5, "practica": 30, "reto": 15, "cierre": 5 },
+    "notas": "Si el grupo es grande, divide las presentaciones en dos sesiones o en mesas simultáneas."
+  }
+}

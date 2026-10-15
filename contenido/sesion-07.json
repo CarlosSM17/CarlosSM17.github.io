@@ -1,0 +1,151 @@
+{
+  "numero": 7,
+  "unidad": 3,
+  "titulo": "Mini-proyecto: tu propio quiz",
+  "python": ["integra unidades 1 a 3"],
+  "modo": 2,
+  "historiaIcono": "🎤",
+  "historia": "¡Concurso de preguntas! Cada quien programará un quiz de 5 preguntas sobre el tema que más le guste. Al final, el programa dirá cuántos puntos sacó quien lo jugó.",
+  "objetivos": [
+    "Integrar lo aprendido: <code>input()</code>, variables, comparaciones, <code>if</code>/<code>elif</code>/<code>else</code>.",
+    "Usar un <b>contador</b> de puntos que aumenta con cada respuesta correcta.",
+    "Planear un programa por partes antes de programarlo (descomposición)."
+  ],
+  "teoria": [
+    { "tipo": "texto", "html": "Un proyecto grande se arma por partes. Antes de arrastrar bloques, piensa en los pasos (esto se llama <b>descomposición</b>):" },
+    { "tipo": "texto", "html": "<ol><li>Crear la variable <code>puntaje = 0</code>.</li><li>Para cada pregunta: pedir la respuesta con <code>input()</code>, compararla con la correcta y, si acierta, sumar 1 al puntaje.</li><li>Al final, mostrar el puntaje.</li><li>Mostrar un mensaje según el puntaje usando <code>if</code>/<code>elif</code>/<code>else</code>.</li></ol>" },
+    { "tipo": "bloques", "titulo": "Una pregunta completa", "codigo": "respuesta = input(\"¿Cuántas patas tiene una araña? \")\nif respuesta == \"8\":\n    print(\"¡Correcto!\")\n    puntaje = puntaje + 1\nelse:\n    print(\"Incorrecto, son 8\")", "alto": 220, "nota": "Repite este patrón para cada pregunta. Recuerda crear <code>puntaje = 0</code> al principio." },
+    { "tipo": "analogia", "icono": "🧮", "titulo": "El contador es como el marcador de un partido", "html": "Empieza en 0 y cada gol suma 1: <code>puntaje = puntaje + 1</code>. Al final del partido, el marcador dice el resultado." },
+    { "tipo": "titulo", "texto": "Trucos para un mejor quiz" },
+    { "tipo": "texto", "html": "<ul><li>Con <code>.lower()</code> aceptas respuestas en mayúsculas o minúsculas: <code>input(...).lower()</code>.</li><li>Si hay dos respuestas válidas, usa <code>or</code>: <code>if r == \"cdmx\" or r == \"ciudad de méxico\":</code></li><li>Para el mensaje final usa rangos: <code>if puntaje == 5:</code> … <code>elif puntaje >= 3:</code> … <code>else:</code></li></ul>" }
+  ],
+  "fichas": [
+    { "titulo": "Contador de puntos", "codigo": "puntaje = 0\npuntaje = puntaje + 1" },
+    { "titulo": "Aceptar mayúsculas", "codigo": "r = input(\"¿Color del cielo? \").lower()" },
+    { "titulo": "Mensaje final", "codigo": "if puntaje == 5:\n    print(\"¡Perfecto!\")\nelif puntaje >= 3:\n    print(\"¡Bien!\")\nelse:\n    print(\"Sigue practicando\")" }
+  ],
+  "glosario": [
+    { "en": "project", "es": "proyecto", "def": "Programa más grande que integra varias ideas." },
+    { "en": "decomposition", "es": "descomposición", "def": "Dividir un problema en partes más pequeñas." },
+    { "en": "score", "es": "puntaje, marcador", "def": "Variable que cuenta los puntos." },
+    { "en": "bug", "es": "error (bicho)", "def": "Un error en el programa. Arreglarlo se llama «depurar» (debug)." }
+  ],
+  "ejemplo": {
+    "titulo": "Un quiz de dos preguntas",
+    "descripcion": "Estudia este quiz corto: tu proyecto tendrá la misma estructura, pero con 5 preguntas.",
+    "codigo": "puntaje = 0\nrespuesta = input(\"¿Capital de México? \").lower()\nif respuesta == \"cdmx\" or respuesta == \"ciudad de méxico\":\n    print(\"¡Correcto!\")\n    puntaje = puntaje + 1\nelse:\n    print(\"Incorrecto, es la Ciudad de México\")\nrespuesta = input(\"¿Cuánto es 7 x 8? \")\nif respuesta == \"56\":\n    print(\"¡Correcto!\")\n    puntaje = puntaje + 1\nelse:\n    print(\"Incorrecto, es 56\")\nprint(\"Tu puntaje:\", puntaje, \"de 2\")",
+    "entradasPrueba": ["CDMX", "54"],
+    "prediccion": {
+      "pregunta": "Si respondes <b>CDMX</b> (en mayúsculas) y <b>54</b>, ¿qué puntaje se muestra?",
+      "opciones": ["1", "2", "0", "Error"],
+      "correcta": 0,
+      "explicacion": "<code>.lower()</code> convierte «CDMX» en «cdmx», así que la primera es correcta. 54 no es 56: puntaje 1."
+    },
+    "investigar": [
+      "¿Para qué sirve el <code>.lower()</code> de la primera pregunta?",
+      "¿Por qué la segunda pregunta compara con <code>\"56\"</code> entre comillas?",
+      "¿En qué línea aumenta el puntaje?"
+    ],
+    "modificar": "Agrega una tercera pregunta y cambia el mensaje final a «de 3»."
+  },
+  "microretos": [
+    {
+      "id": "s07-m1",
+      "titulo": "Calentamiento: una pregunta",
+      "resumen": "Una pregunta que suma puntos.",
+      "enunciado": "Completa la pregunta: si la respuesta es <code>azul</code>, muestra <code>¡Correcto!</code> y suma 1 al puntaje. Al final se muestra <code>Puntaje: 1</code> o <code>Puntaje: 0</code>.",
+      "inicio": "puntaje = 0\nrespuesta = input(\"¿De qué color es el cielo despejado? \").lower()\nif «»:\n    print(\"¡Correcto!\")\n    puntaje = «»\nelse:\n    print(\"Incorrecto\")\nprint(\"Puntaje:\", puntaje)",
+      "requiere": ["acumula"],
+      "pruebas": [
+        { "nombre": "azul", "entradas": ["azul"], "contiene": ["Correcto", "Puntaje: 1"] },
+        { "nombre": "AZUL", "entradas": ["AZUL"], "contiene": ["Correcto", "Puntaje: 1"] },
+        { "nombre": "verde", "entradas": ["verde"], "contiene": ["Incorrecto", "Puntaje: 0"] }
+      ],
+      "solucion": "puntaje = 0\nrespuesta = input(\"¿De qué color es el cielo despejado? \").lower()\nif respuesta == \"azul\":\n    print(\"¡Correcto!\")\n    puntaje = puntaje + 1\nelse:\n    print(\"Incorrecto\")\nprint(\"Puntaje:\", puntaje)",
+      "pistas": [
+        "La condición compara la respuesta con el texto correcto.",
+        "Para sumar 1: el valor actual del puntaje más 1.",
+        "Los huecos son <code>respuesta == \"azul\"</code> y <code>puntaje + 1</code>."
+      ]
+    }
+  ],
+  "reto": {
+    "id": "s07-proyecto",
+    "tipo": "proyecto",
+    "nombrePaso": "Mini-proyecto",
+    "titulo": "Quiz de 5 preguntas con puntaje",
+    "historia": "Tu quiz se jugará en el concurso del grupo.",
+    "enunciado": "Elige un tema y programa un quiz de <b>5 preguntas</b>. Cada respuesta correcta suma un punto. Al final, muestra el puntaje y un mensaje según el resultado (por ejemplo: 5 → «¡Perfecto!», 3 o 4 → «¡Bien!», menos de 3 → «Sigue practicando»).",
+    "requiere": ["input*5", "if*5", "acumula*5", "elif"],
+    "listaCotejo": [
+      "Tiene 5 preguntas con input().",
+      "Cada pregunta revisa la respuesta con if / else.",
+      "Suma puntos con un contador (puntaje = puntaje + 1).",
+      "Muestra el puntaje final.",
+      "Muestra un mensaje final distinto según el puntaje (if / elif / else).",
+      "Funciona sin errores.",
+      "Usa nombres de variables claros."
+    ],
+    "opciones": [
+      {
+        "id": "mexico",
+        "icono": "🇲🇽",
+        "titulo": "Quiz de México",
+        "resumen": "Geografía, historia y cultura de México.",
+        "descripcion": "Quiz de México: la primera pregunta ya está hecha como ejemplo. Agrega 4 preguntas más con la misma estructura y el mensaje final.",
+        "inicio": "# Quiz de México\npuntaje = 0\n# Pregunta 1\nrespuesta = input(\"¿Cuál es el río más largo de México? \").lower()\nif respuesta == \"bravo\" or respuesta == \"río bravo\":\n    print(\"¡Correcto!\")\n    puntaje = puntaje + 1\nelse:\n    print(\"Incorrecto, es el río Bravo\")\n# Agrega aquí las preguntas 2 a 5\n# Muestra el puntaje y un mensaje final",
+        "solucion": "puntaje = 0\nrespuesta = input(\"¿Cuál es el río más largo de México? \").lower()\nif respuesta == \"bravo\" or respuesta == \"río bravo\":\n    print(\"¡Correcto!\")\n    puntaje = puntaje + 1\nelse:\n    print(\"Incorrecto, es el río Bravo\")\nrespuesta = input(\"¿Cuántos estados tiene México? \")\nif respuesta == \"32\":\n    print(\"¡Correcto!\")\n    puntaje = puntaje + 1\nelse:\n    print(\"Incorrecto, son 32 entidades federativas\")\nrespuesta = input(\"¿En qué año inició la Independencia? \")\nif respuesta == \"1810\":\n    print(\"¡Correcto!\")\n    puntaje = puntaje + 1\nelse:\n    print(\"Incorrecto, fue en 1810\")\nrespuesta = input(\"¿Cuál es el volcán más alto de México? \").lower()\nif respuesta == \"pico de orizaba\" or respuesta == \"citlaltépetl\":\n    print(\"¡Correcto!\")\n    puntaje = puntaje + 1\nelse:\n    print(\"Incorrecto, es el Pico de Orizaba\")\nrespuesta = input(\"¿Qué animal aparece en la bandera? \").lower()\nif respuesta == \"águila\" or respuesta == \"aguila\":\n    print(\"¡Correcto!\")\n    puntaje = puntaje + 1\nelse:\n    print(\"Incorrecto, es un águila\")\nprint(\"Tu puntaje:\", puntaje, \"de 5\")\nif puntaje == 5:\n    print(\"¡Perfecto!\")\nelif puntaje >= 3:\n    print(\"¡Bien!\")\nelse:\n    print(\"Sigue practicando\")",
+        "entradasPrueba": ["bravo", "32", "1810", "pico de orizaba", "aguila"]
+      },
+      {
+        "id": "ciencias",
+        "icono": "🔬",
+        "titulo": "Quiz de ciencias",
+        "resumen": "Planetas, cuerpo humano, animales…",
+        "descripcion": "Quiz de ciencias: la estructura ya está planeada con comentarios. Escribe las 5 preguntas, súmale puntos y agrega el mensaje final.",
+        "inicio": "# Quiz de ciencias\npuntaje = 0\n# Pregunta 1: ¿Qué planeta es el más cercano al Sol?\n# Pregunta 2: ¿Cuántos huesos tiene el cuerpo humano adulto?\n# Pregunta 3: ¿Qué gas respiramos para vivir?\n# Pregunta 4: ¿Cuál es el animal terrestre más rápido?\n# Pregunta 5: ¿A cuántos grados hierve el agua?\n# Muestra el puntaje y un mensaje final",
+        "solucion": "puntaje = 0\nr = input(\"¿Qué planeta es el más cercano al Sol? \").lower()\nif r == \"mercurio\":\n    print(\"¡Correcto!\")\n    puntaje = puntaje + 1\nelse:\n    print(\"Incorrecto, es Mercurio\")\nr = input(\"¿Cuántos huesos tiene el cuerpo humano adulto? \")\nif r == \"206\":\n    print(\"¡Correcto!\")\n    puntaje = puntaje + 1\nelse:\n    print(\"Incorrecto, son 206\")\nr = input(\"¿Qué gas respiramos para vivir? \").lower()\nif r == \"oxígeno\" or r == \"oxigeno\":\n    print(\"¡Correcto!\")\n    puntaje = puntaje + 1\nelse:\n    print(\"Incorrecto, es el oxígeno\")\nr = input(\"¿Cuál es el animal terrestre más rápido? \").lower()\nif r == \"guepardo\" or r == \"chita\":\n    print(\"¡Correcto!\")\n    puntaje = puntaje + 1\nelse:\n    print(\"Incorrecto, es el guepardo\")\nr = input(\"¿A cuántos grados Celsius hierve el agua? \")\nif r == \"100\":\n    print(\"¡Correcto!\")\n    puntaje = puntaje + 1\nelse:\n    print(\"Incorrecto, a 100 °C\")\nprint(\"Tu puntaje:\", puntaje, \"de 5\")\nif puntaje == 5:\n    print(\"¡Perfecto!\")\nelif puntaje >= 3:\n    print(\"¡Bien!\")\nelse:\n    print(\"Sigue practicando\")",
+        "entradasPrueba": ["mercurio", "200", "oxígeno", "chita", "100"]
+      },
+      {
+        "id": "libre",
+        "icono": "🎮",
+        "titulo": "Tema libre",
+        "resumen": "Videojuegos, deportes, música… ¡tú eliges!",
+        "descripcion": "Tema libre: inventa tus 5 preguntas. Planea primero en tu cuaderno las preguntas y sus respuestas.",
+        "inicio": "# Mi quiz de: (escribe el tema)\npuntaje = 0\n# Pregunta 1\n# Pregunta 2\n# Pregunta 3\n# Pregunta 4\n# Pregunta 5\n# Muestra el puntaje y un mensaje final"
+      }
+    ]
+  },
+  "puente": [
+    {
+      "pregunta": "¿Qué línea de Python corresponde al bloque naranja dentro del if?",
+      "bloques": "if respuesta == \"8\":\n    puntaje = puntaje + 1",
+      "altoBloques": 130,
+      "codigoOpciones": true,
+      "opciones": ["puntaje = puntaje + 1", "puntaje + 1", "puntaje == puntaje + 1", "puntaje = 1"],
+      "correcta": 0,
+      "explicacion": "El contador se actualiza guardando el valor actual más 1."
+    }
+  ],
+  "autoevaluacion": [
+    { "pregunta": "¿Por qué <code>puntaje = 0</code> va al principio y no dentro de cada pregunta?", "respuesta": "Porque si lo pones en cada pregunta, el puntaje vuelve a 0 y se pierden los puntos anteriores." },
+    { "pregunta": "¿Cómo aceptas «Azul», «AZUL» y «azul» como correctas?", "respuesta": "Convirtiendo la respuesta a minúsculas: <code>input(...).lower()</code>, y comparando con «azul»." }
+  ],
+  "ticket": {
+    "pregunta": "¿Qué número se muestra?",
+    "codigo": "puntos = 3\nrespuesta = \"b\"\nif respuesta == \"a\":\n    puntos = puntos + 1\nelse:\n    puntos = puntos - 1\nprint(puntos)",
+    "opciones": ["2", "4", "3", "b"],
+    "correcta": 0,
+    "explicacion": "La respuesta no es «a», así que se ejecuta el else: 3 - 1 = 2."
+  },
+  "plan": {
+    "activacion": "Juega frente al grupo el quiz de dos preguntas del ejemplo. Pregunta: ¿qué partes tiene este programa?",
+    "ejemplo": "Descompón el quiz en el pizarrón: crear el puntaje, preguntar, comparar, sumar, mostrar. Señala el patrón que se repite.",
+    "practica": "Micro-reto de calentamiento (una pregunta con puntaje). Luego cada pareja elige tema y escribe en su cuaderno las 5 preguntas y respuestas.",
+    "reto": "Desarrollo del mini-proyecto. La lista de cotejo se marca sola mientras programan; recuerda que deben ejecutarlo completo al menos una vez sin errores.",
+    "cierre": "Intercambio: cada pareja juega el quiz de otra. Ticket de salida. Recuerda descargar el .py como evidencia.",
+    "minutos": { "ejemplo": 5, "practica": 10, "reto": 30, "cierre": 10 },
+    "notas": "El mini-proyecto vale 20 % de la calificación y se revisa con la lista de cotejo (Panel docente)."
+  }
+}

@@ -1,0 +1,10 @@
+[
+  { "numero": 0, "nombre": "Bienvenida", "icono": "👋", "color": "#0FBD8C", "modos": "Modo 1 · Bloques" },
+  { "numero": 1, "nombre": "Primeros pasos", "icono": "👣", "color": "#9966FF", "insignia": "Primeros pasos", "modos": "Modo 1 · Bloques" },
+  { "numero": 2, "nombre": "Datos y texto", "icono": "🧰", "color": "#4C97FF", "insignia": "Domador de datos", "modos": "Modo 1 · Bloques" },
+  { "numero": 3, "nombre": "Decisiones", "icono": "🔀", "color": "#FFAB19", "insignia": "Tomador de decisiones", "modos": "Modo 2 · Completar" },
+  { "numero": 4, "nombre": "Repetición", "icono": "🔁", "color": "#FF8C1A", "insignia": "Maestro de bucles", "modos": "Modo 2 · Completar" },
+  { "numero": 5, "nombre": "Listas", "icono": "🎒", "color": "#FF661A", "insignia": "Coleccionista de listas", "modos": "Modo 3 · Con apoyo" },
+  { "numero": 6, "nombre": "Funciones", "icono": "🏗️", "color": "#FF6680", "insignia": "Arquitecto de funciones", "modos": "Modo 3 · Con apoyo" },
+  { "numero": 7, "nombre": "Proyecto final", "icono": "🚀", "color": "#59C059", "modos": "Modo 4 · Libre" }
+]
